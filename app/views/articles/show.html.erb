@@ -1,16 +1,27 @@
-<h1><%= @article.title %></h1>
+<div id="content">
+  <h1 id="header"><%= link_to "Jesper's Blog", articles_path%></h1>
 
-<p><%= @article.body %></p>
+  <div id="article">
+    <h1><%= @article.title %></h1>
 
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
-</ul>
+    <p><%= @article.body %></p>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+    <ul>
+      <li><%= link_to "Edit", edit_article_path(@article) %></li>
+      <li><%= link_to "Destroy", article_path(@article),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %></li>
+    </ul>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+    <h2>Comments</h2>
+    <%= render @article.comments %>
+
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+  </div>
+
+</div>
+<div id="footer">
+<a href="https://guides.rubyonrails.org/getting_started.html"> The guide used to build this blog! </a>
+<a href="https://www.theodinproject.com/"> The curriculum I used to learn to make this </a>
+</div>
